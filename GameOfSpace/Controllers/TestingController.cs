@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 
 namespace GameOfSpace.Controllers
 {
-    //[Authorize]
-    //[ApiController]
-    //[Route("[controller]")]
-    
+    [ApiController]
+    [Route("api/[controller]")]
+    public class UniverseController : ControllerBase
+    {
+        
+    }
 }
