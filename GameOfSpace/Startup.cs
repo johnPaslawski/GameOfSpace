@@ -40,7 +40,7 @@ namespace GameOfSpace
             });
 
             services.AddControllers()
-                // Solves problem with loop : cyclical dependencies between countries and hotels with lambda options 
+                // Solves problem with loop : cyclical dependencies models with lambda options 
                 //like this:
                 .AddNewtonsoftJson(x =>
                 {
@@ -62,7 +62,7 @@ namespace GameOfSpace
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "URLShortener", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GameOfSpace", Version = "v1" });
             });
         }
 
