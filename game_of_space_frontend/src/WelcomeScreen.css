@@ -1,0 +1,51 @@
+.WelcomeScreen {
+  font-family: "Barlow Condensed" !important;
+  
+}
+.WelcomePageBackground {
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 1;
+}
+.WelcomeScreenTitle {
+  color: antiquewhite;
+  text-align: center;
+  margin-top: 20vh;
+  font-size: 3.3rem;
+  font-weight: 200;
+  background-color: rgba(0, 0, 0, 0.337);
+  transition: 0.4s;
+  padding: 0.8rem;
+  cursor: default;
+}
+
+.WelcomeScreenPlayLink {
+  background-color: rgba(0, 0, 0, 0.337);
+  padding: 2rem;
+  text-align: center;
+
+}
+.PlayLink {
+  text-decoration: none;
+  color: rgb(182, 185, 255);
+  font-weight: 300;
+  font-size: 2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px rgb(182, 185, 255) solid;
+  transition: 0.2s;
+}
+.PlayLink:hover {
+  color: rgb(1, 0, 61);
+  border: 1px rgb(1, 0, 61) solid;
+  text-shadow: 1px 1px 4px white;
+  transition: 0.2s;
+}
