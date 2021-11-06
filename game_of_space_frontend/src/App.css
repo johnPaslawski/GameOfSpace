@@ -1,0 +1,32 @@
+.App{
+  font-family: "Barlow Condensed" !important;
+}
+.WelcomeScreenFooter {
+  position: fixed;
+  width: 100vw;
+  padding-top: 0.8rem;
+  padding-bottom: 0.7rem;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.823);
+  color: grey;
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: "Abel" ;
+  border-bottom: 1px solid grey;
+
+}
+.LinkToGit{
+    text-decoration: none;
+    color: rgb(107, 105, 230);
+}
+/* #myVideo {
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 1;
+
+} */

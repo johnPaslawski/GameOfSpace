@@ -40,21 +40,21 @@ namespace GameOfSpace
             });
 
             services.AddControllers()
-                // Solves problem with loop : cyclical dependencies between countries and hotels with lambda options 
+                // Solves problem with loop : cyclical dependencies models with lambda options 
                 //like this:
                 .AddNewtonsoftJson(x =>
                 {
                     x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
 
-            //services.AddCors(options =>
-            //{
-            //    options.AddDefaultPolicy(
-            //        builder =>
-            //        {
-            //            builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
-            //        });
-            //});
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
+                    });
+            });
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
@@ -62,7 +62,7 @@ namespace GameOfSpace
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "URLShortener", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "GameOfSpace", Version = "v1" });
             });
         }
 
