@@ -1,0 +1,25 @@
+.GameBackground {
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 1;
+}
+.prettyJson {
+font-size: 1.3rem;
+}
+.__json-pretty__ {
+font-family: "Abel" !important;
+color: grey;
+
+}
+.__json-key__{
+    color: rgb(43, 255, 0);
+}
+.__json-value__{
+    color: rgb(255, 0, 4);
+}
+
