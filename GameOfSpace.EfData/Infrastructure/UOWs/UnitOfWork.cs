@@ -23,6 +23,8 @@ namespace GameOfSpace.EFCore.Infrastructure.UOWs
         public IGenericRepository<PlanetarySystem> PlanetarySystems => new GenericRepository<PlanetarySystem>(_context);
         public IGenericRepository<User> Users => new GenericRepository<User>(_context);
         public IGenericRepository<Stats> Stats => new GenericRepository<Stats>(_context);
+        public IGenericRepository<Resources> Resources => new GenericRepository<Resources>(_context);
+        public IGenericRepository<Galaxy> Galaxies => new GenericRepository<Galaxy>(_context);
 
         public async Task Save()
         {

@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import useApiGet from "../useApiGet";
-import Board from "./Board";
+import HUD from "./HUD/HUD";
+import WelcomeScreenFooter from "../WelcomeScreen/WelcomeScreenFooter";
 
 const Game = () => {
 
@@ -9,12 +10,15 @@ const Game = () => {
     const { data, isLoading, error } = useApiGet(url) 
     
     return (
-        <div>
-            { error && <h3>{ error }</h3> }
-            { isLoading && <h2>LOADING . . . </h2> }
+        <div className="Game">
+        <img className="WelcomePageBackground" src={process.env.PUBLIC_URL + '/landscape2.jpg'} alt="background image" />
+
+            { error && <div>{ error }</div> }
+            { isLoading && <div>LOADING . . . </div> }
             {/* { isLoading && <div className="text-center"><div className="loading spinner-border"></div></div> } */}
 
-            { data && <Board fetchedUser={ data }/> }
+            { data && <HUD fetchedUser={ data }/> }
+            <WelcomeScreenFooter />
         </div>
     );
 }

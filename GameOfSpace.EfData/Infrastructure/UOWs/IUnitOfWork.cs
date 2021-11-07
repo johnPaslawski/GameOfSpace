@@ -17,6 +17,8 @@ namespace GameOfSpace.EFCore.Infrastructure.UOWs
         IGenericRepository<PlanetarySystem> PlanetarySystems { get; }
         IGenericRepository<User> Users { get; }
         IGenericRepository<Stats> Stats { get; }
+        IGenericRepository<Resources> Resources { get; }
+        IGenericRepository<Galaxy> Galaxies { get; }
         Task Save();
         void SaveSync();
         void PopulateDb();

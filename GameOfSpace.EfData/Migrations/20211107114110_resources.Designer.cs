@@ -4,14 +4,16 @@ using GameOfSpace.EFCore.EFData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameOfSpace.EFCore.Migrations
 {
     [DbContext(typeof(GameOfSpaceDbContext))]
-    partial class GameOfSpaceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211107114110_resources")]
+    partial class resources
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,24 +85,6 @@ namespace GameOfSpace.EFCore.Migrations
                     b.ToTable("CentralStars");
                 });
 
-            modelBuilder.Entity("GameOfSpace.Domain.Models.Galaxy", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Diameter")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Galaxy");
-                });
-
             modelBuilder.Entity("GameOfSpace.Domain.Models.Planet", b =>
                 {
                     b.Property<int>("Id")
@@ -143,9 +127,6 @@ namespace GameOfSpace.EFCore.Migrations
                     b.Property<int>("CentralStarId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GalaxyId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -156,8 +137,6 @@ namespace GameOfSpace.EFCore.Migrations
 
                     b.HasIndex("CentralStarId")
                         .IsUnique();
-
-                    b.HasIndex("GalaxyId");
 
                     b.HasIndex("UserId");
 
@@ -271,12 +250,6 @@ namespace GameOfSpace.EFCore.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("GameOfSpace.Domain.Models.Galaxy", "Galaxy")
-                        .WithMany("PlanetarySystems")
-                        .HasForeignKey("GalaxyId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("GameOfSpace.Domain.Models.User", "User")
                         .WithMany("PlanetarySystems")
                         .HasForeignKey("UserId")
@@ -284,8 +257,6 @@ namespace GameOfSpace.EFCore.Migrations
                         .IsRequired();
 
                     b.Navigation("CentralStar");
-
-                    b.Navigation("Galaxy");
 
                     b.Navigation("User");
                 });
@@ -313,11 +284,6 @@ namespace GameOfSpace.EFCore.Migrations
             modelBuilder.Entity("GameOfSpace.Domain.Models.CentralStar", b =>
                 {
                     b.Navigation("PlanetarySystem");
-                });
-
-            modelBuilder.Entity("GameOfSpace.Domain.Models.Galaxy", b =>
-                {
-                    b.Navigation("PlanetarySystems");
                 });
 
             modelBuilder.Entity("GameOfSpace.Domain.Models.Planet", b =>

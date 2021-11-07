@@ -10,10 +10,12 @@ namespace GameOfSpace.Domain.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public Galaxy Galaxy { get; set; }
+        public int GalaxyId { get; set; }
         public User User { get; set; }
         public int UserId { get; set; }
-        public CentralStar CentralStar { get; set; }
         public int CentralStarId { get; set; }
+        public CentralStar CentralStar { get; set; }
         public List<Planet> Planets { get; set; } = new List<Planet>();
 
 

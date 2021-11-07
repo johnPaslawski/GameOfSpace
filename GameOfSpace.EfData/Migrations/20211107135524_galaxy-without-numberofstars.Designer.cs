@@ -4,14 +4,16 @@ using GameOfSpace.EFCore.EFData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameOfSpace.EFCore.Migrations
 {
     [DbContext(typeof(GameOfSpaceDbContext))]
-    partial class GameOfSpaceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211107135524_galaxy-without-numberofstars")]
+    partial class galaxywithoutnumberofstars
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -90,7 +92,7 @@ namespace GameOfSpace.EFCore.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Diameter")
+                    b.Property<string>("LongestDimension")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")

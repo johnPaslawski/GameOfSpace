@@ -10,9 +10,11 @@ namespace GameOfSpace.Domain.Models
     {
         public int Id { get; set; }
         public bool UnderConstruction { get; set; }
-        public BuildingType BuildingType { get; set; }
-        public int BuildingTypeId { get; set; }
         public DateTime TimeOfBuilt { get; set; }
+        public int PlanetId { get; set; }
         public Planet Planet { get; set; }
+        public int BuildingTypeId { get; set; }
+        public BuildingType BuildingType { get; set; }
+
     }
 }

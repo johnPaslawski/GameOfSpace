@@ -4,15 +4,14 @@
 .WelcomeScreenFooter {
   position: fixed;
   width: 100vw;
-  padding-top: 0.8rem;
-  padding-bottom: 0.7rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.823);
+  background-color: rgb(7, 7, 7);
   color: grey;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-family: "Abel" ;
-  border-bottom: 1px solid grey;
 
 }
 .LinkToGit{
@@ -30,3 +29,4 @@
   opacity: 1;
 
 } */
+

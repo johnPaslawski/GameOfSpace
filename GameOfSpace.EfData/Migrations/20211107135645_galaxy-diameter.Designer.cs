@@ -4,14 +4,16 @@ using GameOfSpace.EFCore.EFData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GameOfSpace.EFCore.Migrations
 {
     [DbContext(typeof(GameOfSpaceDbContext))]
-    partial class GameOfSpaceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211107135645_galaxy-diameter")]
+    partial class galaxydiameter
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace GameOfSpace.Domain.Models
 {
-    public class User
+    public class Galaxy
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
-        public string NickName { get; set; }
-        public Stats Stats { get; set; }
-        public List<Resources> OwnedResources { get; set; } = new List<Resources>();
+        public string Name { get; set; }
+        public string Diameter { get; set; }
         public List<PlanetarySystem> PlanetarySystems { get; set; } = new List<PlanetarySystem>();
     }
 }
